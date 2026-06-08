@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atividade Pedagógica — Xenofobia · EJA Alfabetização · EMEF Arq. Vilanova Artigas</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --preto:  #0f0f0f;
+    --verde:  #2d5a3d;
+    --verde2: #3d7a55;
+    --ocre:   #c9782a;
+    --palha:  #f5ede0;
+    --branco: #fefaf5;
+    --cinza:  #6b6259;
+    --borda:  #e0d4c3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--palha);
+    color: var(--preto);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--verde);
+    color: var(--branco);
+    padding: 52px 40px 44px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 20px,
+      rgba(255,255,255,0.025) 20px,
+      rgba(255,255,255,0.025) 21px
+    );
+  }
+
+  .hero-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.7rem, 5vw, 2.7rem);
+    line-height: 1.18;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: #8ed4a8;
+  }
+
+  .hero-sub {
+    font-size: 0.93rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 520px;
+    margin: 0 auto 26px;
+    position: relative;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+  }
+
+  .hero-badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 20px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 4px 14px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── WRAPPER ── */
+  .wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 44px 32px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    animation: sobir 0.5s ease both;
+  }
+
+  @keyframes sobir {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── CARD PRINCIPAL ── */
+  .card {
+    background: var(--branco);
+    border: 1.5px solid var(--borda);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  }
+
+  /* topo */
+  .card-topo {
+    background: var(--verde);
+    color: var(--branco);
+    padding: 26px 32px;
+  }
+
+  .card-topo .tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8ed4a8;
+    margin-bottom: 8px;
+  }
+
+  .card-topo .titulo {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1.45rem;
+    line-height: 1.25;
+  }
+
+  /* meta pills */
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 20px 32px 0;
+  }
+
+  .pill {
+    font-size: 0.73rem;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+  }
+
+  .p-seg { background: #e3f0e8; color: #1a4a2a; border: 1px solid #88c0a0; }
+  .p-dur { background: #e8f0fe; color: #1a3a8f; border: 1px solid #93b4f5; }
+  .p-tem { background: #fde8d8; color: #7a2d0a; border: 1px solid #f4b07a; }
+  .p-mat { background: #fce8ec; color: #7a1a28; border: 1px solid #f5a0b0; }
+
+  /* corpo */
+  .card-corpo {
+    padding: 24px 32px 36px;
+  }
+
+  .card-corpo h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--verde);
+    margin: 28px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--borda);
+  }
+
+  .card-corpo h3:first-child { margin-top: 0; }
+
+  .card-corpo h4 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--verde2);
+    margin: 20px 0 8px;
+  }
+
+  .card-corpo p {
+    font-size: 0.94rem;
+    color: #2a2a2a;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+
+  .card-corpo ol {
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  .card-corpo li {
+    font-size: 0.93rem;
+    color: #2a2a2a;
+    margin-bottom: 10px;
+  }
+
+  .card-corpo li strong { color: var(--verde); }
+
+  /* destaque */
+  .destaque {
+    margin: 22px 0 0;
+    background: #eef6f1;
+    border-left: 4px solid var(--verde2);
+    border-radius: 0 4px 4px 0;
+    padding: 14px 18px;
+    font-size: 0.91rem;
+    font-style: italic;
+    color: var(--verde);
+    line-height: 1.65;
+  }
+
+  /* adapt */
+  .adapt {
+    margin-top: 18px;
+    background: #fffbf5;
+    border: 1px solid #e8d8b8;
+    border-radius: 4px;
+    padding: 14px 18px;
+    font-size: 0.87rem;
+    color: #6b4e1a;
+    line-height: 1.65;
+  }
+
+  .adapt strong { display: block; margin-bottom: 5px; font-weight: 700; color: var(--ocre); }
+
+  /* materiais */
+  .materiais {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: #f4f4f4;
+    border: 1px dashed var(--borda);
+    border-radius: 4px;
+    font-size: 0.86rem;
+    color: var(--cinza);
+    line-height: 1.65;
+  }
+
+  .materiais strong { display: block; margin-bottom: 6px; color: var(--preto); font-weight: 700; }
+
+  /* ── RODAPÉ ── */
+  footer {
+    background: var(--verde);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    font-size: 0.78rem;
+    padding: 24px 20px;
+    letter-spacing: 0.05em;
+  }
+
+  footer strong { color: #8ed4a8; }
+
+  @media (max-width: 600px) {
+    .wrap { padding-left: 16px; padding-right: 16px; }
+    .card-topo, .card-corpo, .meta { padding-left: 18px; padding-right: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-label">EMEF Arq. Vilanova Artigas · Semana 15–19 de junho de 2026</p>
+  <h1>"De onde vem, quem eu sou?"<br><em>Origens, culturas e o direito de pertencer</em></h1>
+  <p class="hero-sub">Atividade pedagógica para EJA Alfabetização sobre xenofobia, diversidade cultural e direitos dos migrantes.</p>
+  <div class="hero-badges">
+    <span class="hero-badge">EJA Alfabetização</span>
+    <span class="hero-badge">Xenofobia</span>
+    <span class="hero-badge">Diversidade Cultural</span>
+    <span class="hero-badge">Direitos Humanos</span>
+  </div>
+</header>
+
+<!-- CONTEÚDO -->
+<div class="wrap">
+  <div class="card">
+
+    <div class="card-topo">
+      <div class="tag">Xenofobia · Diversidade cultural · Leitura de mundo</div>
+      <div class="titulo">"De onde vem quem eu sou?" — Origens, culturas e o direito de pertencer</div>
+    </div>
+
+    <div class="meta">
+      <span class="pill p-seg">EJA Alfabetização</span>
+      <span class="pill p-dur">2 aulas · 50 min cada</span>
+      <span class="pill p-tem">Xenofobia · Diversidade cultural</span>
+      <span class="pill p-mat">Oralidade + Imagem + Escrita</span>
+    </div>
+
+    <div class="card-corpo">
+
+      <h3>Objetivo</h3>
+      <p>Valorizar as origens culturais dos estudantes — muitos migrantes internos ou internacionais — e desenvolver a compreensão de que xenofobia é discriminação e viola direitos.</p>
+
+      <h3>1ª Aula — De onde vim? <span style="font-weight:400;font-size:0.9rem;color:var(--cinza)">(50 min)</span></h3>
+
+      <h4>Mapa afetivo <span style="font-weight:400">(20 min)</span></h4>
+      <p>O(a) professor(a) apresenta um mapa do Brasil e do mundo (grande, impresso ou projetado). Cada estudante aponta ou gruda um adesivo colorido no lugar de onde veio (estado, país). Conversa orientada: <em>"Por que você veio para São Paulo? Como foi chegar aqui?"</em></p>
+
+      <h4>Roda de culturas <span style="font-weight:400">(20 min)</span></h4>
+      <p>Cada estudante compartilha uma palavra, comida, música ou expressão do lugar de origem. O(a) professor(a) escreve no quadro em letra bastão: <em>"Nossa turma veio de muitos lugares. Isso nos torna mais ricos."</em> A frase é lida coletivamente.</p>
+
+      <h4>Situação-problema <span style="font-weight:400">(10 min)</span></h4>
+      <p>O(a) professor(a) narra oralmente uma situação fictícia: <em>"Maria veio da Venezuela. Na fila do mercado, alguém disse: 'volta para o seu país'. Como Maria se sentiu? O que você faria se estivesse perto?"</em> Respostas livres e acolhidas pela turma.</p>
+
+      <h3>2ª Aula — Xenofobia é crime <span style="font-weight:400;font-size:0.9rem;color:var(--cinza)">(50 min)</span></h3>
+
+      <h4>Releitura do caso <span style="font-weight:400">(10 min)</span></h4>
+      <p>O(a) professor(a) retoma a situação de Maria. Apresenta, em linguagem simples, o que é xenofobia: <em>"Xenofobia é quando alguém trata outra pessoa mal por ela ser de outro lugar ou país. Isso é errado e é crime."</em> A palavra XENOFOBIA é escrita no quadro em letra grande e lida coletivamente sílaba por sílaba.</p>
+
+      <h4>Cartaz coletivo <span style="font-weight:400">(30 min)</span></h4>
+      <p>Em grupos, os estudantes criam um cartaz com o título <em>"Aqui todo mundo tem direito ao respeito"</em>, usando desenhos, recortes de revistas e frases ditadas ao(à) professor(a) ou escritas com apoio. Os cartazes são expostos no corredor da escola durante a semana das atividades.</p>
+
+      <h4>Frase de encerramento <span style="font-weight:400">(10 min)</span></h4>
+      <p>Cada estudante completa oralmente ou por escrito no caderno: <em>"Eu sei que tenho direito a…"</em> As respostas são compartilhadas voluntariamente em roda.</p>
+
+      <div class="destaque">
+        Reflexão crítica central: Ninguém escolhe onde nasce. Discriminar alguém por sua origem, sotaque ou nacionalidade é xenofobia — e o Brasil tem leis que protegem os migrantes e punem quem os desrespeita.
+      </div>
+
+      <div class="adapt">
+        <strong>Adaptação por nível de escrita</strong>
+        Estudantes pré-silábicos e silábicos contribuem com o cartaz por meio de desenhos e fala — o(a) professor(a) escreve as falas ao lado dos desenhos como legenda. Aproveite para trabalhar as letras iniciais dos nomes dos países e estados citados pela turma, integrando o conteúdo de cidadania ao processo de alfabetização.
+      </div>
+
+      <div class="materiais">
+        <strong>Materiais necessários</strong>
+        Mapa do Brasil e mapa-mundi impressos (tamanho A3 ou maior) · adesivos coloridos · revistas para recorte · cola · cartolina · giz de cera · lápis · quadro e giz/pincel
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>EMEF Arq. Vilanova Artigas</strong> &nbsp;·&nbsp; EJA — Alfabetização &nbsp;·&nbsp; Semana de Atividades: 15 a 19 de junho de 2026 &nbsp;·&nbsp; Planejamentos até 12 de junho
+</footer>
+
+</body>
+</html>
